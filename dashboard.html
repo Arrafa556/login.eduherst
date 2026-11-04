@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard - Eduherst</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="halaman-dashboard">
+  <main class="kartu lebar">
+
+    <!-- Kepala: salam + tombol keluar (id dipakai oleh script.js) -->
+    <header class="kepala">
+      <div>
+        <h1 id="salam">Halo</h1>
+        <p class="sub">Kelola data siswa Eduherst di sini.</p>
+      </div>
+      <button type="button" id="tombolKeluar" class="keluar">Keluar</button>
+    </header>
+
+    <!-- Ringkasan -->
+    <section class="ringkasan" aria-label="Ringkasan data">
+      <div class="kotak"><span class="angka" id="statTotal">0</span><span class="label">Total siswa</span></div>
+      <div class="kotak"><span class="angka" id="statRata">0</span><span class="label">Rata-rata nilai</span></div>
+      <div class="kotak"><span class="angka" id="statLulus">0</span><span class="label">Lulus (nilai 75+)</span></div>
+    </section>
+
+    <!-- Form tambah data -->
+    <section aria-labelledby="judulTambah">
+      <h2 id="judulTambah">Tambah siswa</h2>
+      <p id="pesanForm" class="galat" role="alert" hidden></p>
+      <form id="formSiswa" class="form-baris" novalidate>
+        <div>
+          <label for="nama">Nama</label>
+          <input id="nama" maxlength="60" required>
+        </div>
+        <div>
+          <label for="kelas">Kelas</label>
+          <input id="kelas" maxlength="20" placeholder="contoh: X-A" required>
+        </div>
+        <div>
+          <label for="nilai">Nilai (0-100)</label>
+          <input id="nilai" type="number" min="0" max="100" inputmode="numeric" required>
+        </div>
+        <button type="submit" class="utama tambah">Tambah</button>
+      </form>
+    </section>
+
+    <!-- Tabel data -->
+    <section aria-labelledby="judulData">
+      <div class="baris-judul">
+        <h2 id="judulData">Daftar siswa</h2>
+        <input id="cari" type="search" placeholder="Cari nama atau kelas" aria-label="Cari siswa">
+      </div>
+
+      <div class="gulir">
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Nama</th>
+              <th>Kelas</th>
+              <th>Nilai</th>
+              <th>Status</th>
+              <th><span class="sr">Aksi</span></th>
+            </tr>
+          </thead>
+          <tbody id="isiTabel"></tbody>
+        </table>
+      </div>
+      <p id="kosong" class="kosong" hidden>Belum ada data yang cocok.</p>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

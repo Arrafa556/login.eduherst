@@ -1,0 +1,117 @@
+:root {
+  --latar: #e9eef0;
+  --kartu: #ffffff;
+  --teks: #17262b;
+  --redup: #5b6b71;
+  --garis: #c4d0d4;
+  --aksen: #0a4352;
+  --galat-bg: #fdecec;
+  --galat: #9b1c1c;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --latar: #10191c;
+    --kartu: #19262a;
+    --teks: #e8f0f2;
+    --redup: #9bb0b6;
+    --garis: #2f4249;
+    --aksen: #7cc8d8;
+    --galat-bg: #3a1c1c;
+    --galat: #ffb4b4;
+  }
+}
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  color: var(--teks);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  line-height: 1.5;
+
+  /* Latar: lapisan gelap tipis + gambar (alamat dibaca dari lokasi style.css) */
+  background-color: var(--latar);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url("img/latar.jpg.jpe");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.kartu {
+  width: 100%;
+  max-width: 24rem;
+  background: var(--kartu);
+  border: 1px solid var(--garis);
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+h1 { margin: 0 0 .25rem; font-size: 1.5rem; text-align: center; }
+.sub { margin: 0 0 1.5rem; color: var(--redup); text-align: center; }
+
+label { display: block; margin: 1rem 0 .35rem; font-weight: 600; font-size: .95rem; }
+input {
+  width: 100%;
+  padding: .7rem .8rem;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 1px solid var(--garis);
+  border-radius: 6px;
+}
+input:focus-visible, button:focus-visible {
+  outline: 3px solid var(--aksen);
+  outline-offset: 2px;
+}
+
+.kolom-password { display: flex; gap: .5rem; }
+.lihat {
+  flex: none;
+  padding: 0 .8rem;
+  font: inherit;
+  font-size: .9rem;
+  color: var(--teks);
+  background: transparent;
+  border: 1px solid var(--garis);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.utama {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: .75rem;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: var(--aksen);
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+@media (prefers-color-scheme: dark) { .utama { color: #0b1417; } }
+.utama:hover { filter: brightness(1.1); }
+
+.galat {
+  margin: 0 0 1rem;
+  padding: .7rem .9rem;
+  border-radius: 6px;
+  font-size: .95rem;
+  background: var(--galat-bg);
+  color: var(--galat);
+}
+
+.catatan {
+  margin: 1.25rem 0 0;
+  font-size: .9rem;
+  color: var(--redup);
+  text-align: center;
+}
+
+[hidden] { display: none !important; }

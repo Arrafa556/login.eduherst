@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eduherst</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="kartu">
+    <h1>Login</h1>
+    <p class="sub">Selamat Datang</p>
+
+    <!-- Pesan galat: disembunyikan sampai ada kesalahan -->
+    <p id="pesan" class="galat" role="alert" hidden></p>
+
+    <form id="formLogin" novalidate>
+      <label for="username">Username</label>
+      <input id="username" name="username" autocomplete="username" required autofocus>
+
+      <label for="password">Password</label>
+      <div class="kolom-password">
+        <input id="password" name="password" type="password" autocomplete="current-password" required>
+        <button type="button" id="tombolLihat" class="lihat" aria-pressed="false">Lihat</button>
+      </div>
+
+      <button type="submit" class="utama">Masuk</button>
+    </form>
+
+    <p class="catatan">Eduherst</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
